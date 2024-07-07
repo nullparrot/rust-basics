@@ -6,7 +6,7 @@ The puzzles require loading a large data set from a file, and manupulating it to
 
 Due to the simple, but varied, nature of the puzzles, this repository can serve as a resource for simple functions and examples of Rust use for my future reference.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.youtube.com/watch?v=xHa-oiw-ODU)
 
 # Development Environment
 

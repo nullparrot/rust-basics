@@ -11,6 +11,7 @@ fn main() {
             let seeds = line.split_whitespace().collect::<Vec<&str>>();
             let mut closest : u64 = 0;
             let mut answer : u64 = 0;
+            // Check each seed for location. Drill down through the different maps. Abort with message when failed to find seed location
             for seed in seeds {
                 let seed = seed.parse::<u64>().unwrap();
                 let soil = map_search("./seeds-soil.txt", seed);
