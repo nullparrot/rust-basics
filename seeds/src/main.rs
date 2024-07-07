@@ -59,15 +59,22 @@ fn main() {
 }
 
 fn map_search(filename: &str, input: u64) -> u64 {
+    // Prepare result variable
     let mut res : u64 = 0;
+    // Open map file
     if let Ok(lines) = read_lines(filename) {
+        // Iterate through map
         for line in lines.flatten() {
+            // Seperate pieces of map line
             let pieces = line.split_whitespace().collect::<Vec<&str>>();
             let inp = pieces[0].parse::<u64>().unwrap();
             let outp = pieces[1].parse::<u64>().unwrap();
             let rang = pieces[2].parse::<u64>().unwrap();
+            // Check if value maps in this line and store lowest value found
             if (input >= inp) && (input <= (inp + rang)) {
-                res = outp + (input-inp)
+                if res > (outp + (input-inp)) || res == 0{
+                    res = outp + (input-inp)
+                }
             }
         }
     }
